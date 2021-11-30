@@ -3,7 +3,7 @@ djangorestframework
 django-filter
 gunicorn
 django-heroku
-bleac
+bleach
 segno
 requests 
 django-reversion
