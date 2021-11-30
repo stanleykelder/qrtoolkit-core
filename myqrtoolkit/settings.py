@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'qrtoolkit_core'
 ]
+
+API_URL = '/api/'
+REDIRECT_SERVICE_URL = ''
+ENVIRONMENT = 'DV'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
