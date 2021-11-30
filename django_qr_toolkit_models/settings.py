@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+# Added for Heroku (https://devcenter.heroku.com/articles/django-app-configuration)
+import django_heroku
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -162,3 +165,6 @@ LOGGING = {
         },
     }
 }
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
