@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
 API_URL = '/api/'
 REDIRECT_SERVICE_URL = ''
-ENVIRONMENT = 'DV'
+ENVIRONMENT = 'PR'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
