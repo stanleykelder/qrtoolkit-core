@@ -221,8 +221,8 @@ class ApiCallAdmin(admin.ModelAdmin):
         return super(ApiCallAdmin, self).get_field_queryset(db, db_field, request)
 
 
-admin.site.site_header = 'Qr Dodrecht Administration'
-admin.site.site_title = 'Qr Dordrecht admin'
+admin.site.site_header = 'QR Dodrecht Administration'
+admin.site.site_title = 'QR Dordrecht admin'
 admin.site.site_url = settings.API_URL
 
 
