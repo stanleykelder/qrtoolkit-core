@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 API_URL = '/api/'
-REDIRECT_SERVICE_URL = 'https://qr-toolkit.herokuapp.com/admin'
+REDIRECT_SERVICE_URL = 'https://qr-toolkit.herokuapp.com'
 ENVIRONMENT = 'PR'
 
 MIDDLEWARE = [
