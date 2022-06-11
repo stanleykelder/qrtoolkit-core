@@ -1,0 +1,60 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script src="{% static 'qrtoolkit_core/js/qr-code-scanner.min.js' %}"></script>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+        &rsaquo; <a href="{% url 'admin:qrtoolkit_core_qrcode_changelist' %}">QrCode</a> &rsaquo; Scan
+    </div>
+{% endblock %}
+
+{% block content %}
+    <qr-code-scanner id="myScanner"></qr-code-scanner>
+    <form method="post" id="cForm">
+        {% csrf_token %}
+        <input name="short_uuid" value="" style="display: none;visibility: hidden" id="update-code"/>
+        <button type="submit" id="submitBtn" style="display: none;visibility: hidden"></button>
+    </form>
+
+    <pre>
+        <code id="error"></code>
+        <code id="response"></code>
+    </pre>
+    <script>
+        const error = document.getElementById('error');
+        const response = document.getElementById('response');
+        const scanner = document.getElementById('myScanner');
+
+        scanner.setAttribute('allowed-hosts', ['qr.stad.gent',
+            'localhost:8080', 'localhost:8000',
+            'qrredirect.servicesdv.local',
+            'qtoolkitsite.servicesqa.local/']);
+        // scanner.setAttribute('authorization', 'basic ' + btoa('foo:bar'));
+
+        scanner.setAttribute('only-parse', true);
+
+        scanner.addEventListener('error', async ({detail}) => {
+            error.innerText = detail[0].message;
+        });
+        scanner.addEventListener('decode', async ({detail}) => {
+            console.log(detail)
+            const uuid = detail[0]
+            const updateCodeLink = document.getElementById('update-code');
+            updateCodeLink.value = uuid;
+            const update = confirm(`Update qr code with id ${uuid}?`)
+            if (update) {
+                document.getElementById('submitBtn').click();
+            } else {
+                updateCodeLink.href = '../%id%/change';
+            }
+
+        });
+
+    </script>
+{% endblock %}
