@@ -53,7 +53,7 @@ a.site-logo::before {
     display: block;
     width: 4rem;
     /* background: url(https://stad.gent/themes/contrib/gent_base/build/styleguide/img/svg/build/logo--cyan.svg) no-repeat center center; */
-    background: url(../../../../templates/images/Dordrecht-.png) no-repeat center center;
+    background: url({% static 'qrtoolkit_core/img/loading.gif' %}) no-repeat center center;
     background-size: 100%;
     content: '';
     min-width: 4rem;
