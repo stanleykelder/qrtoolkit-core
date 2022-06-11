@@ -1,0 +1,16 @@
+{% extends 'qrtoolkit_core/layout.html' %} {% block title %}
+    <title>Basic information page</title>
+{% endblock title %} {% block content %}
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-title p-3">
+                <h1>{{ qrcode.title }}</h1>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <p>{{ qrcode.basic_info }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
