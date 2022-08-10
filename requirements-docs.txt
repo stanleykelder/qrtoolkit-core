@@ -1,2 +1,0 @@
-mkdocs==1.2.2
-mkdocs-macros-plugin==0.6.0

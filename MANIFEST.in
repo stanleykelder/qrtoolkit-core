@@ -1,6 +1,0 @@
-include README.md
-recursive-include qrtoolkit_core/static *
-recursive-include qrtoolkit_core/templates *
-recursive-exclude * *.py[co]
-recursive-exclude django_qr_toolkit_models *
-
